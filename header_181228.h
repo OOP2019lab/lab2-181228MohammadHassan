@@ -1,33 +1,26 @@
-#pragma once
-#include <string>
-
+#include<iostream>
 using namespace std;
 
-class CricketTeam {
+class student
+{
 private:
-	string * membernames;
-	int no_of_members;
-	char *teamName;
-	int ScoreInLast10Matches[10];
-	int Rank;
-	string captain;
+	static int counter;
+	int id;
+	float *quizscore;
+	int quizcapacity;
+	int quiztaken;
+	float GPA;
 public:
-	CricketTeam();
-	CricketTeam(string name, int number);
-	CricketTeam(const char * fileName);
-	~CricketTeam();
-	string getCaptain();
-	int getRank();
-	char* getTeamName();
-	int getNoOfMembers();
-	void setCaptain(string cap);
-	void setRank(int r);
-	void setTeamName(char * name);
-	void setNoOfMembers(int n);
-	void inputTeamMember(string name);
-	void inputScore(int score);
-	float avgScore();
-	void printLatestScore();
-	void printTeamInfo();
-	bool compare(CricketTeam & second);
+	student();
+	student(int,float);
+	student(const student &);
+	~student();
+	void addquizcsore(float);
+	void setGPA(float);
+	float getGPA() const;
+	void print() const;
+	bool compare(student);
+	void updatescore(int,float);
+	void printarray(student[],int);
+	student *GPAarr(student[],int);
 };
